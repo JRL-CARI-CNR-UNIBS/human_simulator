@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+<include file="$(find human_model)/launch/upload.launch"/>
+<node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
+<remap from="robot_description" to="human_description"/>
+<remap from="joint_states" to="human_joint_states"/>
+</node>
+<node name="human_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+<remap from="robot_description" to="human_description"/>
+<remap from="joint_states" to="human_joint_states"/>
+</node>
+<rosparam command="load" file="$(find human_model)/config/fake_detection.yaml" />
+<rosparam command="load" file="$(find human_model)/config/objects.yaml" />
+  
+<node name="fake_people_detection" pkg="fake_people_detection" type="node"/>
+
+</launch>

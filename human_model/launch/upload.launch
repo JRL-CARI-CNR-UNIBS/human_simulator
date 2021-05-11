@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+  <param name="human_description" command="$(find xacro)/xacro --inorder '$(find human_model)/urdf/umanoa.urdf'" />
+</launch>

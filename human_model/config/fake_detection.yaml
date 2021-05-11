@@ -1,0 +1,47 @@
+fake_body_link_name:
+- coscia_dx_Link
+- bacino_link
+- coscia_sx_Link
+- busto_Link
+- piede_dx_Link
+- piede_dx_ry_Link
+- piede_sx_Link
+- piede_sx_ry_Link
+- testa_Link
+- testa_rz_Link
+- mano_dx_Link
+- mano_dx_rz_Link
+- mano_sx_Link
+- mano_sx_rz_Link
+- bicipite_dx_Link
+- busto_rz_Link
+- bicipite_sx_Link
+- coscia_dx_rx_Link
+- coscia_dx_ry_Link
+- coscia_dx_rz_Link
+- coscia_sx_rx_Link
+- coscia_sx_ry_Link
+- coscia_sx_rz_Link
+- piede_dx_rx_Link
+- polpaccio_dx_rx_Link
+- piede_sx_rx_Link
+- polpaccio_sx_rx_Link
+- testa_rx_Link
+- testa_ry_Link
+- busto_rx_Link
+- busto_ry_Link
+- avambraccio_dx_rx_Link
+- bicipite_dx_rz_Link
+- avambraccio_sx_rx_Link
+- bicipite_sx_rz_Link
+- mano_dx_rx_Link
+- mano_dx_ry_Link
+- mano_sx_rx_Link
+- mano_sx_ry_Link
+- bicipite_dx_rx_Link
+- bicipite_dx_ry_Link
+- bicipite_sx_rx_Link
+- bicipite_sx_ry_Link
+
+
+fake_people_detection_world_frame: world

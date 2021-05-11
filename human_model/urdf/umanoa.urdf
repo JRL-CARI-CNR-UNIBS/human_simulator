@@ -1,0 +1,1402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="umanoa">
+  
+  
+  <link name="world"/>
+  
+  <joint
+    name="world_link_x"
+    type="prismatic">
+    <origin xyz="1 2 1" rpy="0 0 0" />
+
+    <parent link="world" />
+    <child link="bacino_link_x" />
+    <axis xyz="1 0 0" />
+        <limit
+      lower="-4"
+      upper="4"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link name="bacino_link_x"/>
+   <joint
+    name="world_link_y"
+    type="prismatic">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="bacino_link_x" />
+    <child link="bacino_link" />
+    <axis xyz="0 1 0" />
+    <limit
+      lower="-4"
+      upper="4"
+      effort="0"
+      velocity="0" />
+  </joint> 
+  
+  <link
+    name="bacino_link">
+    <inertial>
+      <origin
+        xyz="1.63084527327795E-05 0.00482972023678639 -0.0681817318631012"
+        rpy="0 0 0" />
+      <mass
+        value="14.0934021081274" />
+      <inertia
+        ixx="0.0949181150286265"
+        ixy="-1.03230480747761E-05"
+        ixz="-1.25085778882932E-05"
+        iyy="0.170706666777228"
+        iyz="0.00132631356646179"
+        izz="0.169800725598489" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/bacino_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/bacino_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="coscia_dx_Link"/>
+  <joint
+    name="anca_dx"
+    type="fixed">
+    <origin
+      xyz="-0.0889 0 -0.1905"
+      rpy="1.5708 0 0" />
+    <parent
+      link="bacino_link" />
+    <child
+      link="coscia_dx_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="coscia_dx_rx_Link"/>
+  <joint
+    name="anca_dx_rx"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="coscia_dx_Link" />
+    <child
+      link="coscia_dx_rx_Link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.74"
+      upper="0.52"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="coscia_dx_ry_Link"/>
+  <joint
+    name="anca_dx_ry"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="coscia_dx_rx_Link" />
+    <child
+      link="coscia_dx_ry_Link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="coscia_dx_rz_Link">
+    <inertial>
+      <origin
+        xyz="0.00662753240336589 -0.044826678010188 -0.0201614038322519"
+        rpy="0 0 0" />
+      <mass
+        value="11.8867774501735" />
+      <inertia
+        ixx="0.303595205835885"
+        ixy="0.000594465401412999"
+        ixz="2.99085342904802E-05"
+        iyy="0.0443849999482012"
+        iyz="-0.0201705033753511"
+        izz="0.298071839790968" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/coscia_dx_rz_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/coscia_dx_rz_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="anca_dx_rz"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="coscia_dx_ry_Link" />
+    <child
+      link="coscia_dx_rz_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.7"
+      upper="0.35"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="polpaccio_dx_rx_Link">
+    <inertial>
+      <origin
+        xyz="-0.000304420917175363 -0.109966681022119 -0.0130003073633206"
+        rpy="0 0 0" />
+      <mass
+        value="6.86310239666224" />
+      <inertia
+        ixx="0.139910119437171"
+        ixy="-5.11988110893528E-05"
+        ixz="-1.18777943387184E-05"
+        iyy="0.0161961116536394"
+        iyz="-0.0102294578236297"
+        izz="0.138969335978628" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/polpaccio_dx_rx_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/polpaccio_dx_rx_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ginocchio_dx_rx"
+    type="revolute">
+    <origin
+      xyz="0.0065311 -0.35352 -0.044754"
+      rpy="0 0 0" />
+    <parent
+      link="coscia_dx_rz_Link" />
+    <child
+      link="polpaccio_dx_rx_Link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0.66"
+      upper="-1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="piede_dx_rx_Link"/>
+  <joint
+    name="caviglia_dx_rx"
+    type="revolute">
+    <origin
+      xyz="5.0188E-05 -0.37937 -0.035164"
+      rpy="0 0 0" />
+    <parent
+      link="polpaccio_dx_rx_Link" />
+    <child
+      link="piede_dx_rx_Link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-0.35"
+      upper="0.7"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="piede_dx_ry_Link">
+    <inertial>
+      <origin
+        xyz="0.000721562613339999 -0.0172273022014146 0.0502157348703868"
+        rpy="0 0 0" />
+      <mass
+        value="2.49810016737232" />
+      <inertia
+        ixx="0.0109341663859979"
+        ixy="2.37647768707714E-05"
+        ixz="-0.00021392179843149"
+        iyy="0.0109487988082798"
+        iyz="0.00112175865463177"
+        izz="0.00283228719378269" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/piede_dx_ry_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/piede_dx_ry_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="caviglia_dx_ry"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="piede_dx_rx_Link" />
+    <child
+      link="piede_dx_ry_Link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-0.52"
+      upper="0.52"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="piede_dx_Link"/>
+  <joint
+    name="caviglia_dx"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="piede_dx_ry_Link" />
+    <child
+      link="piede_dx_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="coscia_sx_Link"/>
+  <joint
+    name="anca_sx"
+    type="fixed">
+    <origin
+      xyz="0.0889 -0.0099886 -0.1901"
+      rpy="1.5708 0 0" />
+    <parent
+      link="bacino_link" />
+    <child
+      link="coscia_sx_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="coscia_sx_rx_Link"/>
+  <joint
+    name="anca_sx_rx"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="coscia_sx_Link" />
+    <child
+      link="coscia_sx_rx_Link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.74"
+      upper="0.52"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="coscia_sx_ry_Link"/>
+  <joint
+    name="anca_sx_ry"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="coscia_sx_rx_Link" />
+    <child
+      link="coscia_sx_ry_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="coscia_sx_rz_Link">
+    <inertial>
+      <origin
+        xyz="-0.00607204020530218 -0.0461359748866554 -0.000225075287491326"
+        rpy="0 0 0" />
+      <mass
+        value="11.886776881057" />
+      <inertia
+        ixx="0.303598011640181"
+        ixy="0.000591472914415259"
+        ixz="-7.32059163231502E-05"
+        iyy="0.0450746920057602"
+        iyz="0.024110139094956"
+        izz="0.297384762883386" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/coscia_sx_rz_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/coscia_sx_rz_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="anca_sx_rz"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="coscia_sx_ry_Link" />
+    <child
+      link="coscia_sx_rz_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.7"
+      upper="0.35"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="polpaccio_sx_rx_Link">
+    <inertial>
+      <origin
+        xyz="-0.000304376364054643 -0.105874814203783 -0.0466388955605134"
+        rpy="0 0 0" />
+      <mass
+        value="6.86310250556743" />
+      <inertia
+        ixx="0.139910202667"
+        ixy="-4.91566097376849E-05"
+        ixz="-1.85162512352105E-05"
+        iyy="0.0209985608427251"
+        iyz="-0.0259074740816005"
+        izz="0.13416676775691" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/polpaccio_sx_rx_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/polpaccio_sx_rx_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ginocchio_sx_rx"
+    type="revolute">
+    <origin
+      xyz="-0.0061689 -0.35444 0.028771"
+      rpy="0 0 0" />
+    <parent
+      link="coscia_sx_rz_Link" />
+    <child
+      link="polpaccio_sx_rx_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0.66"
+      upper="-1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="piede_sx_rx_Link"/>
+  <joint
+    name="cavilgia_sx_rx"
+    type="revolute">
+    <origin
+      xyz="5.0188E-05 -0.37001 -0.1041"
+      rpy="0 0 0" />
+    <parent
+      link="polpaccio_sx_rx_Link" />
+    <child
+      link="piede_sx_rx_Link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-0.35"
+      upper="0.7"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="piede_sx_ry_Link">
+    <inertial>
+      <origin
+        xyz="-0.00114662703793376 -0.0151448914064408 0.0583777382316568"
+        rpy="0 0 0" />
+      <mass
+        value="2.49652450251182" />
+      <inertia
+        ixx="0.0109291066101329"
+        ixy="-8.51264846863559E-06"
+        ixz="0.000197722472104845"
+        iyy="0.0110450676639959"
+        iyz="0.000630741708385516"
+        izz="0.0027229068714671" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/piede_sx_ry_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/piede_sx_ry_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="caviglia_sx_ry"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="piede_sx_rx_Link" />
+    <child
+      link="piede_sx_ry_Link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-0.52"
+      upper="0.52"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="piede_sx_Link"/>
+  <joint
+    name="caviglia_sx"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="piede_sx_ry_Link" />
+    <child
+      link="piede_sx_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="busto_Link"/>
+  <joint
+    name="busto"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0127"
+      rpy="1.5708 0 0" />
+    <parent
+      link="bacino_link" />
+    <child
+      link="busto_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="busto_rx_Link"/>
+  <joint
+    name="colon_rx"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="busto_Link" />
+    <child
+      link="busto_rx_Link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="0.44"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="busto_ry_Link"/>
+  <joint
+    name="colon_ry"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="busto_rx_Link" />
+    <child
+      link="busto_ry_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.78"
+      upper="0.78"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="busto_rz_Link">
+    <inertial>
+      <origin
+        xyz="-7.08042820760759E-06 0.319417381127728 0.00430747877918096"
+        rpy="0 0 0" />
+      <mass
+        value="42.2207301568567" />
+      <inertia
+        ixx="1.30999404753053"
+        ixy="-9.29927456062665E-06"
+        ixz="-1.1505750971957E-05"
+        iyy="0.609099091757231"
+        iyz="-0.00512165621586603"
+        izz="1.66563031781146" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/busto_rz_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/busto_rz_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="colon_rz"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="busto_ry_Link" />
+    <child
+      link="busto_rz_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.43"
+      upper="0.43"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="testa_rx_Link"/>
+  <joint
+    name="collo_rx"
+    type="revolute">
+    <origin
+      xyz="0 0.635 0"
+      rpy="0 0 0" />
+    <parent
+      link="busto_rz_Link" />
+    <child
+      link="testa_rx_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.05"
+      upper="0.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="testa_ry_Link"/>
+  <joint
+    name="collo_ry"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="testa_rx_Link" />
+    <child
+      link="testa_ry_Link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.4"
+      upper="1.4"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="testa_rz_Link">
+    <inertial>
+      <origin
+        xyz="-0.0042994764407131 0.084903449003125 0.00528561556827116"
+        rpy="0 0 0" />
+      <mass
+        value="9.51616308063526" />
+      <inertia
+        ixx="0.0624442133084464"
+        ixy="-1.16854366186225E-05"
+        ixz="-1.14673484552627E-05"
+        iyy="0.0284241810054554"
+        iyz="-0.00300483893482992"
+        izz="0.059784165007599" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/testa_rz_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/testa_rz_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="collo_rz"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="testa_ry_Link" />
+    <child
+      link="testa_rz_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.78"
+      upper="0.78"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="testa_Link"/>
+  <joint
+    name="collo"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="testa_rz_Link" />
+    <child
+      link="testa_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="bicipite_dx_Link"/>
+  <joint
+    name="spalla_dx"
+    type="fixed">
+    <origin
+      xyz="-0.15132 0.47482 0.00064832"
+      rpy="0 0 0" />
+    <parent
+      link="busto_rz_Link" />
+    <child
+      link="bicipite_dx_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="bicipite_dx_rx_Link"/>
+  <joint
+    name="spalla_dx_rx"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="bicipite_dx_Link" />
+    <child
+      link="bicipite_dx_rx_Link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.05"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="bicipite_dx_ry_Link"/>
+  <joint
+    name="spalla_dx_ry"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="bicipite_dx_rx_Link" />
+    <child
+      link="bicipite_dx_ry_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.4"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="bicipite_dx_rz_Link">
+    <inertial>
+      <origin
+        xyz="-0.134925496806097 -0.0340848452073823 0.00910309159813259"
+        rpy="0 0 0" />
+      <mass
+        value="4.37432831162481" />
+      <inertia
+        ixx="0.0323903616181337"
+        ixy="-0.0116044812374463"
+        ixz="0.0138304659353632"
+        iyy="0.0370064257784088"
+        iyz="0.0114099590316461"
+        izz="0.0344002508376811" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/bicipite_dx_rz_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/bicipite_dx_rz_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="spalla_dx_rz"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="bicipite_dx_ry_Link" />
+    <child
+      link="bicipite_dx_rz_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.87"
+      upper="2.62"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="avambraccio_dx_rx_Link">
+    <inertial>
+      <origin
+        xyz="0.00640171203686074 0.115378456843917 0.0174186456140455"
+        rpy="0 0 0" />
+      <mass
+        value="2.47455958799397" />
+      <inertia
+        ixx="0.0220323949428965"
+        ixy="0.00109799054244726"
+        ixz="0.000332235534721599"
+        iyy="0.00617156761844111"
+        iyz="-0.00693311292457083"
+        izz="0.0188046728069392" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/avambraccio_dx_rx_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/avambraccio_dx_rx_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gomito_dx_rx"
+    type="revolute">
+    <origin
+      xyz="-0.26746 -0.15599 0.14561"
+      rpy="0 0 0" />
+    <parent
+      link="bicipite_dx_rz_Link" />
+    <child
+      link="avambraccio_dx_rx_Link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.05"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="mano_dx_rx_Link"/>
+  <joint
+    name="polso_dx_rx"
+    type="revolute">
+    <origin
+      xyz="0.00095467 0.28215 0.085973"
+      rpy="0 0 0" />
+    <parent
+      link="avambraccio_dx_rx_Link" />
+    <child
+      link="mano_dx_rx_Link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.05"
+      upper="1.04"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="mano_dx_ry_Link"/>
+  <joint
+    name="polso_dx_ry"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="mano_dx_rx_Link" />
+    <child
+      link="mano_dx_ry_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.05"
+      upper="1.05"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="mano_dx_rz_Link">
+    <inertial>
+      <origin
+        xyz="-0.0862287148213654 0.0519480038617923 0.0548049144750927"
+        rpy="0 0 0" />
+      <mass
+        value="1.09693295932978" />
+      <inertia
+        ixx="0.00108659967519784"
+        ixy="0.000358634269185419"
+        ixz="0.000396636173161562"
+        iyy="0.00194646759127748"
+        iyz="-0.000243365223583501"
+        izz="0.00149061906997174" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/mano_dx_rz_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/mano_dx_rz_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="polso_dx_rz"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="mano_dx_ry_Link" />
+    <child
+      link="mano_dx_rz_Link" />
+    <axis
+      xyz="0 0.0042356 0.99999" />
+    <limit
+      lower="-1.4"
+      upper="1.4"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="mano_dx_Link"/>
+  <joint
+    name="polso-dx"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="mano_dx_rz_Link" />
+    <child
+      link="mano_dx_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="bicipite_sx_Link"/>
+  <joint
+    name="spalla_sx"
+    type="fixed">
+    <origin
+      xyz="0.15113 0.47498 0"
+      rpy="0 0 0" />
+    <parent
+      link="busto_rz_Link" />
+    <child
+      link="bicipite_sx_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="bicipite_sx_rx_Link"/>
+  <joint
+    name="spalla_sx_rx"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="bicipite_sx_Link" />
+    <child
+      link="bicipite_sx_rx_Link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.05"
+      upper="2.44"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="bicipite_sx_ry_Link"/>
+  <joint
+    name="spalla_sx_ry"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="bicipite_sx_rx_Link" />
+    <child
+      link="bicipite_sx_ry_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.4"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="bicipite_sx_rz_Link">
+    <inertial>
+      <origin
+        xyz="0.108582025328863 -0.100757209649031 -0.040279031544695"
+        rpy="0 0 0" />
+      <mass
+        value="4.94739357728019" />
+      <inertia
+        ixx="0.0484633832241138"
+        ixy="0.0058625732645538"
+        ixz="0.00278211363604115"
+        iyy="0.016555517012349"
+        iyz="-0.0124179445995877"
+        izz="0.0445637006865341" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/bicipite_sx_rz_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/bicipite_sx_rz_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="spalla_sx_rz"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="bicipite_sx_ry_Link" />
+    <child
+      link="bicipite_sx_rz_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.87"
+      upper="2.62"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="avambraccio_sx_rx_Link">
+    <inertial>
+      <origin
+        xyz="-0.000456727189665218 -0.00413403239961016 0.112610797703676"
+        rpy="0 0 0" />
+      <mass
+        value="2.47454926258547" />
+      <inertia
+        ixx="0.0218870994895058"
+        ixy="0.000411085040104089"
+        ixz="-0.000604412687192958"
+        iyy="0.0196307526217198"
+        iyz="0.00633516549054064"
+        izz="0.00549072087738548" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/avambraccio_sx_rx_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/avambraccio_sx_rx_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gomito_sx_rx"
+    type="revolute">
+    <origin
+      xyz="0.13309 -0.29866 -0.10954"
+      rpy="0 0 0" />
+    <parent
+      link="bicipite_sx_rz_Link" />
+    <child
+      link="avambraccio_sx_rx_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.05"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="mano_sx_rx_Link"/>
+  <joint
+    name="polso_sx_rx"
+    type="revolute">
+    <origin
+      xyz="0.0054506 -0.067753 0.27698"
+      rpy="0 0 0" />
+    <parent
+      link="avambraccio_sx_rx_Link" />
+    <child
+      link="mano_sx_rx_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-1.05"
+      upper="1.05"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="mano_sx_ry_Link"/>
+  <joint
+    name="polso_sx_ry"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="mano_sx_rx_Link" />
+    <child
+      link="mano_sx_ry_Link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-0.52"
+      upper="0.35"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="mano_sx_rz_Link">
+    <inertial>
+      <origin
+        xyz="-0.00564009436764457 -0.0162383580516536 0.110322190347408"
+        rpy="0 0 0" />
+      <mass
+        value="1.09976469119972" />
+      <inertia
+        ixx="0.00175137952749591"
+        ixy="-4.73615273596413E-06"
+        ixz="2.58128012984874E-05"
+        iyy="0.00199074137888703"
+        iyz="0.000398494695785101"
+        izz="0.000826647756442142" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/mano_sx_rz_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://human_model/meshes/mano_sx_rz_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="polso_sx_rz"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="mano_sx_ry_Link" />
+    <child
+      link="mano_sx_rz_Link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.4"
+      upper="1.4"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="mano_sx_Link"/>
+  <joint
+    name="polso_sx"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="mano_sx_rz_Link" />
+    <child
+      link="mano_sx_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
